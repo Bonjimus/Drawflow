@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="drawful_skilltree_css.css">
+  <script src="https://cdn.jsdelivr.net/gh/jerosoler/Drawflow/dist/drawflow.min.js"></script>
+    <style>
+      #drawflow {
+        display: block;
+        width: 100%;
+        height: 1080px;
+      }
+
+
+    </style>
+</head>
+<body>
+
+  <div id="drawflow"></div>
+
+  <script>
+
+  var id = document.getElementById("drawflow");
+  const editor = new Drawflow(id);
+  editor.reroute = true;
+  editor.reroute_fix_curvature = true;
+
+  editor.start();
+
+    var html = '<div><input type="text" df-name></div>';
+    var data = { "name": 'Test Testing test' };
+
+
+  var testNode = document.createElement("div");
+  editor.registerNode("Node", Node);
+
+  editor.editor_mode = 'edit';
+  editor.zoom_max = 2;
+  editor.zoom_min = 0.7;
+  editor.zoom_value = 0.1; 
+
+
+/* Skill Tree Nodes 
+editor.addNode(name, inputs, outputs, posx (left), posy (top), class, data, html);
+
+The order of these nodes are important in making the connections
+*/
+
+/*TEMPLATE NODES
+  editor.addNode('github', 1, 1, 6000, 600, 'node_XX', data, "<b> </b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_XX', data, "<b> </b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_XX', data, "<b> </b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_XX', data, "<b> </b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_XX', data, "<b> </b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_XX', data, "<b> </b>");
+*/
+
+/*CULTURE */
+
+  editor.addNode('github', 0, 1, 100, 600, 'node_1', data, "<b>The Sterile Workspace</b>");
+  editor.addNode('github', 1, 0, 400, 300, 'node_2', data, "<b>Equipment Sterilsation</b>");
+  editor.addNode('github', 1, 1, 750, 600, 'node_3', data, "<b>Sterile Technique</b>");
+  editor.addNode('github', 1, 1, 1075, 120, 'node_4', data, "<b>Culturing Conditions</b>");
+  editor.addNode('github', 1, 0, 1400, 120, 'node_5', data, "<b>Host Selection  </b>");
+  editor.addNode('github', 1, 1, 1375, 985, 'node_6', data, "<b>Mixing Media &Pouring Plates</b>");
+  editor.addNode('github', 1, 0, 1625, 900, 'node_7', data, "<b>LB AGAR MEDIA</b>");
+  editor.addNode('github', 1, 0, 1625, 1060, 'node_8', data, "<b>LB LIQUID MEDIA</b>");
+  editor.addNode('github', 1, 1, 1060, 985, 'node_9', data, "<b>Media Sterilsation</b>");
+  editor.addNode('github', 1, 0, 1075, 260, 'node_10', data, "<b>Antibiotic Stock & Solution Mixing</b>");
+  editor.addNode('github', 1, 0, 1060, 860, 'node_11', data, "<b>Glycerol Stocks</b>");
+
+/* Purify & Examine */
+
+
+  editor.addNode('github', 1, 1, 1865, 145, 'node_12', data, "<b> Purification of Genomic DNA </b>");
+  editor.addNode('github', 1, 1, 2240, -90, 'node_13', data, "<b> Genomic DNA Purication via Boiling </b>");
+  editor.addNode('github', 1, 1, 2240, 20, 'node_14', data, "<b> Genomic DNA Purication via CTAB </b>");
+  editor.addNode('github', 1, 0, 1865, 480, 'node_15', data, "<b> Purification of Genomic DNA: Miniprep </b>");
+  editor.addNode('github', 1, 0, 1865, 580, 'node_16', data, "<b> Purification of Genomic DNA: Midiprep</b>");
+  editor.addNode('github', 1, 0, 1865, 380, 'node_17', data, "<b> Purification of Genomic DNA: Miraprep</b>");
+  editor.addNode('github', 1, 1, 2360, 600, 'node_18', data, "<b>Agarose Gel Electrophoresis</b>");
+  editor.addNode('github', 1, 1, 2700, 700, 'node_19', data, "<b>Gel Illumunination & Photography</b>");
+  editor.addNode('github', 1, 1, 2700, 260, 'node_20', data, "<b>Cotton Wool Gel Extraction</b>");
+  editor.addNode('github', 1, 1, 2700, 400, 'node_21', data, "<b>QG Gel Extration</b>");
+  editor.addNode('github', 1, 1, 2700, 800, 'node_22', data, "<b>DIY Buffer Mixing</b>");
+  editor.addNode('github', 1, 1, 3150, 600, 'node_23', data, "<b>The Polymerase Chain Reaction</b>");
+  editor.addNode('github', 1, 1, 3400, 700, 'node_24', data, "<b>Gradient PCR</b>");
+  editor.addNode('github', 1, 1, 3400, 500, 'node_25', data, "<b>Primer Design</b>");
+  editor.addNode('github', 1, 1, 2360, 985, 'node_26', data, "<b>Sequencing Preparation</b>");
+  editor.addNode('github', 1, 1, 2700, 985, 'node_27', data, "<b>Sequencing</b>");
+  editor.addNode('github', 1, 1, 3750, 820, 'node_28', data, "<b>RNA Purification</b>");
+  editor.addNode('github', 1, 1, 4035, 720, 'node_29', data, "<b>RT-PCR</b>");
+  editor.addNode('github', 1, 1, 4035, 920, 'node_30', data, "<b>RT-qPCR</b>");
+
+/* Manipulate & Learn */
+
+  editor.addNode('github', 1, 1, 6000, 600, 'node_31', data, "<b>Gblock Design</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_32', data, "<b>Ordering Synthesised DNA</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_33', data, "<b>Restriction Enzyme Digest of Insert DNA</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_34', data, "<b>Site Directed Mutagenesis</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_35', data, "<b>Ligation</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_36', data, "<b>Backbone Selection</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_37', data, "<b>Restriction Enzyme Digest of Plasmid DNA</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_38', data, "<b>Flanking Sequence Addition</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_39', data, "<b>Golden Gate Assembly</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_40', data, "<b>Gibson Assembly</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_41', data, "<b>Plasmid Insertion</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_42', data, "<b>RuCl CC. Cell Preperation</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_43', data, "<b>CaCl2 CC. Cell Preparation</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_44', data, "<b>Heat Shock Transformation</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_45', data, "<b>Electrocompetent Cell Preparation</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_46', data, "<b>Electroporation</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_47', data, "<b>DIY Gene Gun</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_48', data, "<b>Confirmation of Edits</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_49', data, "<b>Patch Plate & Colony PCR</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_50', data, "<b>Restriction Digest Analysis</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_51', data, "<b>Sequencing Confirmation</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_52', data, "<b>CRISPR/CAS9</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_53', data, "<b>Induction of Protein Expression</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_54', data, "<b>Transcriptome Analysis</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_55', data, "<b>Northern Blot</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_56', data, "<b>Gene Switch</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_57', data, "<b>Cell Lysis</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_58', data, "<b>Bead-Beating Lysis</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_59', data, "<b>Chloroform Lysis of Periplasm</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_60', data, "<b>Affinity Tag Purification</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_61', data, "<b>His-Tag Protein Purification</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_62', data, "<b>Car9 Protein Purification</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_63', data, "<b>Centrifuge & Filter His-Tag Purification</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_64', data, "<b>His-Tag Column Chromatography</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_65', data, "<b>Proteome Analysis</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_66', data, "<b>OMICS</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_67', data, "<b>Mass Spec Preparation</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_68', data, "<b>SDS PAGE</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_69', data, "<b>Western Blot</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_70', data, "<b>Eastern Blot</b>");
+  editor.addNode('github', 1, 1, 6000, 1200, 'node_71', data, "<b>Antibody Production</b>");
+  editor.addNode('github', 1, 1, 6000, 1400, 'node_72', data, "<b>Aptamer Production</b>");
+  editor.addNode('github', 1, 1, 6000, 1600, 'node_73', data, "<b>ELISA</b>");
+  editor.addNode('github', 1, 1, 6000, 600, 'node_74', data, "<b>Cell Assays</b>");
+  editor.addNode('github', 1, 1, 6000, 800, 'node_75', data, "<b>In Silica Modelling</b>");
+  editor.addNode('github', 1, 1, 6000, 1000, 'node_76', data, "<b>Advanced Biological Programming</b>");
+ 
+/*New Nodes*/
+editor.addNode('github', 1, 1, 1555, 734, 'node_77_15', data, "<b>Purification of Plasmid DNA</b>");
+
+
+
+/* Skill Tree Connections */
+
+/*Culture Connections */
+
+  editor.addConnection(1,2,'output_1', 'input_1');
+  editor.addConnection(1,3,'output_1', 'input_1');
+  editor.addConnection(3,4,'output_1', 'input_1');
+  editor.addConnection(4,5,'output_1', 'input_1');
+  editor.addConnection(3,11,'output_1', 'input_1');
+  editor.addConnection(3,10,'output_1', 'input_1');
+  editor.addConnection(3,9,'output_1', 'input_1');
+  editor.addConnection(9,6,'output_1', 'input_1');
+  editor.addConnection(6,7,'output_1', 'input_1');
+  editor.addConnection(6,8,'output_1', 'input_1');
+
+
+/* Purify & Examine Connections*/
+
+  editor.addConnection(3,12,'output_1', 'input_1');
+  editor.addConnection(77,15,'output_1', 'input_1');
+  editor.addConnection(77,16,'output_1', 'input_1');
+  editor.addConnection(77,17,'output_1', 'input_1');
+  editor.addConnection(77,18,'output_1', 'input_1');
+  editor.addConnection(77,26,'output_1', 'input_1');
+  editor.addConnection(12,26,'output_1', 'input_1');
+  editor.addConnection(3,77,'output_1', 'input_1');
+  editor.addConnection(12,18,'output_1', 'input_1');
+
+
+  editor.addConnection(12,13,'output_1', 'input_1');
+  editor.addConnection(12,14,'output_1', 'input_1');
+  editor.addConnection(18,19,'output_1', 'input_1');
+  editor.addConnection(18,20,'output_1', 'input_1');
+  editor.addConnection(18,21,'output_1', 'input_1');
+  editor.addConnection(18,23,'output_1', 'input_1');
+  editor.addConnection(23,25,'output_1', 'input_1');
+  editor.addConnection(23,24,'output_1', 'input_1');
+  editor.addConnection(18,22,'output_1', 'input_1');
+  editor.addConnection(24,28,'output_1', 'input_1');
+  editor.addConnection(28,29,'output_1', 'input_1');
+  editor.addConnection(28,30,'output_1', 'input_1');
+  editor.addConnection(26,27,'output_1', 'input_1'); 
+  editor.addConnection(12,26,'output_1', 'input_1');
+   
+/* Manipulate & Learn Connections*/
+
+
+    editor.on("nodeSelected", function(id) {
+      console.log("node selected "+ id)
+    })
+
+    editor.on("nodeCreated", function(id) {
+      console.log("node created "+ id)
+    })
+
+    editor.on("connectionCreated", function(id) {
+      console.log("node created "+ id)
+    })
+
+editor.zoom_max = 2;
+editor.zoom_min = 0.5;
+editor.zoom_value = 0.1;
+
+
+
+
+
+  </script>
+
+
+
+</body>
+</html> 
